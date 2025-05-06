@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Roberto Maldonado Real Estate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary-color: #1a237e; /* Navy Blue */
       --secondary-color: #e8eaf6; /* Light Lavender Gray */
       --accent-color: #fbc02d; /* Golden Yellow */
       --text-color: #333;
-      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --font-family: 'Montserrat', sans-serif;
     }
 
     * {
@@ -24,6 +25,7 @@
       color: var(--text-color);
       background-color: white;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
@@ -35,37 +37,60 @@
       align-items: center;
     }
 
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+      margin-right: 1rem;
+    }
+
     nav a {
       color: white;
       text-decoration: none;
       margin-left: 1rem;
-      font-weight: bold;
+      font-weight: 600;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: var(--accent-color);
     }
 
     .hero {
-      background-color: var(--secondary-color);
+      background: linear-gradient(to right, #e8eaf6, #ffffff);
       text-align: center;
       padding: 4rem 2rem;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
     .hero h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #555;
     }
 
     .section {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
+      animation: slideIn 1s ease forwards;
     }
 
     .section h2 {
       color: var(--primary-color);
       margin-bottom: 1rem;
+    }
+
+    .section p {
+      font-size: 1.1rem;
     }
 
     footer {
@@ -75,11 +100,24 @@
       padding: 1rem;
       margin-top: 2rem;
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
   </style>
 </head>
 <body>
   <header>
-    <div><strong>Roberto Maldonado Real Estate</strong></div>
+    <div class="logo">
+      <img src="logo.png" alt="Roberto Maldonado Logo">
+      <strong>Roberto Maldonado Real Estate</strong>
+    </div>
     <nav>
       <a href="#mission">Mission</a>
       <a href="#vision">Vision</a>
@@ -112,4 +150,3 @@
   </footer>
 </body>
 </html>
-
